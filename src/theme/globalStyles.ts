@@ -15,6 +15,21 @@ const GlobalStyles = createGlobalStyle`
     letter-spacing: 0.3px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    background: #83a95c;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
   }
 
   code {
@@ -26,6 +41,20 @@ const GlobalStyles = createGlobalStyle`
     max-width: 1200px;
     margin: 0px auto;
     padding: 0 15px;
+  }
+
+
+  h4 {
+    margin: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
   }
 `
 export default GlobalStyles

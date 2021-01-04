@@ -1,20 +1,30 @@
-import React, { Component } from 'react'
+import { toJS } from 'mobx'
+import { observer } from 'mobx-react'
+import queryString from 'query-string'
 
-import socketIoClient from 'socket.io-client'
+import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
+
+import roomStore from '../../stores/roomStore'
+import ChatRoom from '../ChatRoom'
+
 import EnterRoom from '../EnterRoom'
 
-class App extends Component {
-  componentDidMount() {
-    const io = socketIoClient('http://localhost:3001')
+const App = observer(
+  class extends Component {
+    render() {
+      return (
+        <div className="app">
+          <Route path="/" exact>
+            <EnterRoom />
+          </Route>
+          <Route path="/chat">
+            <ChatRoom />
+          </Route>
+        </div>
+      )
+    }
   }
-
-  render() {
-    return (
-      <div className="app">
-        <EnterRoom />
-      </div>
-    )
-  }
-}
+)
 
 export default App
